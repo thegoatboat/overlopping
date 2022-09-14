@@ -1,0 +1,38 @@
+
+ALGORITHM overlapping_sum
+VAR
+    A,B :table of integer;
+    hash : HASH_TABLE<INTEGER>
+
+BEGIN
+
+    whrit("donner A:table")
+    read (A)
+    whrit("donner B:table")
+    read (B)
+
+    for let i FROM 0 to A.length STEP 1 DO
+       
+     IF (hash.has(A[i])) THEN
+        hash.set(A[i], 1 + hash.get(A[i]));
+     ELSE
+            hash.set(A[i], 1);
+         ELSE IF (hash.has(B[i])) THEN
+                hash.set(B[i], 1 + hash.get(B[i]));
+            ELSE
+                hash.set(B[i], 1);
+                sum = 0;
+            
+     END_IF
+    for  entry of hash
+    IF ((parseInt((entry[1]).toString()) == 1) THEN
+        sum += parseInt((entry[0]).toString());
+
+    END_IF
+         
+    read sum
+ 
+END
+ 
+
+
